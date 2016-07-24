@@ -18,5 +18,5 @@
     }
     x <- lhs %/% rhs
     y <- lhs %% rhs
-    return(c(divides.into = x, left.overs = y))
+    return(c(quotient = x, remainder = y))
 }
