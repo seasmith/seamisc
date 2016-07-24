@@ -1,4 +1,24 @@
 
+# getFromFUN() ------------------------------------------------------------
+#
+#' Get all object names from a function's environment.
+#'
+
+getFromFUN <- function(x, value = FALSE){
+  if(is.character(x)) x <- eval(as.name(x))
+
+  e <- environment(x)
+  ls.obj <- ls(envir = e, all.names = TRUE)
+
+  if(value){
+    ls.obj.names <- ls.obj
+    ls.obj <- lapply(ls.obj, get0, envir = environment(x))
+    names(ls.obj) <- ls.obj.names
+  }
+
+  return(ls.obj)
+}
+
 # expand.grid2() ----------------------------------------------------------
 #
 #' A new version of an old favorite with some extra options
