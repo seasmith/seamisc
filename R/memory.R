@@ -3,8 +3,10 @@
 # http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session
 
 # ls.objects() ------------------------------------------------------------
-
-
+#
+#' List objects in the current work space (global environment) and their
+#' respective size in bytes.
+#'
 ls.objects <- function(pos = 1, pattern, order.by,
                         decreasing = FALSE, head = FALSE, n = 5){
     napply <- function(names, fun) sapply(names, function(x){

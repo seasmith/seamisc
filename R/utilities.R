@@ -1,3 +1,25 @@
+# what() ------------------------------------------------------------------
+#
+#' Console function for determing: class, type, mode, and names of an object.
+#'
+#' @param x An object.
+#' @param SIMPLIFY Option to simplify result to a
+#' vector (deafult is \code{TRUE}). Result is a list if \code{FALSE}.
+
+what <- function(x, SIMPLIFY = TRUE){
+  if(SIMPLIFY){
+    c(class = class(x),
+      type = typeof(x),
+      mode = mode(x),
+      names = names(x))
+  } else{
+  list(class = class(x),
+       type = typeof(x),
+       mode = mode(x),
+       names = names(x))
+  }
+}
+
 
 # getFromFUN() ------------------------------------------------------------
 #

@@ -23,7 +23,7 @@
 
 
 
-# facet_fun() -------------------------------------------------------------
+# split_apply() -----------------------------------------------------------
 #
 #' Apply a function to a faceted piece of data.
 #'
@@ -38,13 +38,18 @@
 #'
 #' # Gives the mean \code{wt} when \code{mtcars} has been faceted by \code{cyl}.
 #' facet_fun(mtcars, "wt", "cyl", mean)
-facet_fun <- function(data, x, y, FUN){
+split_apply <- function(data, x, y, FUN, SIMPLIFY = TRUE){
     data.split <- split(data, data[[y]])
-    FUN.calc <- sapply(seq_along(data.split), function(i){
+    FUN.apply <- sapply(seq_along(data.split), function(i){
         FUN(data.split[[i]][[x]])
     })
-    names(FUN.calc) <- names(data.split)
-    return(FUN.calc)
+    if(SIMPLIFY){
+      FUN.result <- do.call(cbind, list(names(data.split), FUN.apply))
+      return(FUN.result)
+    } else{
+      names(FUN.apply) <- names(data.split)
+      return(FUN.apply)
+    }
 }
 
 facet_fun2 <- function(data, x, y, FUN){
