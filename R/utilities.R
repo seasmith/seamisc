@@ -24,7 +24,6 @@ what <- function(x, SIMPLIFY = TRUE){
 # getFromFUN() ------------------------------------------------------------
 #
 #' Get all object names from a function's environment.
-#'
 
 getFromFUN <- function(x, value = FALSE){
   if(is.character(x)) x <- eval(as.name(x))
