@@ -40,13 +40,14 @@ list.pos <- function(name, lst){
 #' sequence for \code{extract()} to extract the elements of \code{lst}. Default
 #' value is the length of the shortest vector in the list.
 #' @export
-#' @example
-#' x <- list(a = 1:5, b = 6:9)
-#' # Does not extract last element in x$a; does not throw an error
-#' extract(x, length(x$b))
-#' # Throws an error because num (length(x$a)) is greater than the number of
-#' elements in x$b (greater than length(x$b)).
-#' extract(x, length(x$a))
+#' @examples
+#' # x <- list(a = 1:5, b = 6:9)
+#' ## Does not extract last element in x$a; does not throw an error
+#' # extract(x, length(x$b))
+#' ## Throws an error because num (length(x$a)) is greater than the number of
+#' ## elements in x$b (greater than length(x$b)).
+#' #extract(x, length(x$a))
+#'
 
 extract <- function(lst, num = min(lengths(lst))){
     # if(!is.list(lst)) stop("Error: object lst is not a list")
