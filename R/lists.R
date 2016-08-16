@@ -1,6 +1,6 @@
 
 # list.pos() --------------------------------------------------------------
-#
+#'
 #' Finds the position of a named list element within a list (with no
 #' recurssion).
 #'
