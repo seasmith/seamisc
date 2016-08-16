@@ -10,6 +10,7 @@
 #'
 #' @param lhs A number (integer or numeric).
 #' @param rhs A number (integer or numeric).
+#' @export
 `%M%` <- function(lhs, rhs){
     if(lhs < rhs){
         old.lhs <- lhs
@@ -38,6 +39,7 @@
 #'
 #' # Gives the mean \code{wt} when \code{mtcars} has been faceted by \code{cyl}.
 #' facet_fun(mtcars, "wt", "cyl", mean)
+#' @export
 split_apply <- function(data, x, y, FUN, SIMPLIFY = TRUE){
     data.split <- split(data, data[[y]])
     FUN.apply <- sapply(seq_along(data.split), function(i){

@@ -4,6 +4,7 @@
 #'
 #' @param x A vector or a list of two vectors.
 #' @param y A vector.
+#' @export
 
 recycle.NA <- function(x, y){
   # Set x and y to a list and get length of each
@@ -28,6 +29,7 @@ recycle.NA <- function(x, y){
 #'
 #' @param x A vector or a list of two vectors.
 #' @param y A vector.
+#' @export
 
 recycle.vector <- function(x, y){
   # Test if x is list; if TRUE then create separate x and y vectors

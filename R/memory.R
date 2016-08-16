@@ -6,7 +6,8 @@
 #
 #' List objects in the current work space (global environment) and their
 #' respective size in bytes.
-#'
+#' @export
+
 ls.objects <- function(pos = 1, pattern, order.by,
                         decreasing = FALSE, head = FALSE, n = 5){
     napply <- function(names, fun) sapply(names, function(x){
@@ -32,9 +33,9 @@ ls.objects <- function(pos = 1, pattern, order.by,
 
 
 # ls.os() ------------------------------------------------------------------
+#' Shorthand form of .ls.objects().
+#' @export
 
-
-# Shorthand form of .ls.objects().
 lsos <- function(..., n = 10) {
     .ls.objects(..., order.by = "Size",
                 decreasing = TRUE, head = TRUE, n = n)
@@ -43,8 +44,9 @@ lsos <- function(..., n = 10) {
 
 
 # ls.mem() ----------------------------------------------------------------
+#' Find the total memory of all objects
+#' @export
 
-# Find the total memory of all objects
 ls.mem <- function(pos = 1, all.names = TRUE, unit = "MB"){
     # get object sizes and sum all sizes to find total
     obj <- ls(pos = pos, all.names = all.names)

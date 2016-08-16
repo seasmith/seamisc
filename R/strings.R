@@ -5,6 +5,8 @@
 #'
 #' @seealso
 #' Taken from ~/ggplot2/utilities.r
+#' @export
+
 camelize <- function(x, first = FALSE) {
   x <- gsub("_(.)", "\\U\\1", x, perl = TRUE)
   if (first) x <- firstUpper(x)
@@ -19,6 +21,8 @@ camelize <- function(x, first = FALSE) {
 #'
 #' @seealso
 #' Taken from ~/ggplot2/utilities.r
+#' @export
+
 snakeize <- function(x) {
   x <- gsub("([A-Za-z])([A-Z])([a-z])", "\\1_\\2\\3", x)
   x <- gsub(".", "_", x, fixed = TRUE)
