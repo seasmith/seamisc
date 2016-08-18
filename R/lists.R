@@ -30,7 +30,7 @@ list.pos <- function(name, lst){
 }
 
 # extract() ---------------------------------------------------------------
-#
+#'
 #' Sequentially extract elements from vectors of equal length in a list.
 #'
 #' @param lst A list of vectors of equal length, a data frame, or a matrix.
