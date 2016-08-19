@@ -4,6 +4,14 @@
 #' Finds the position of a named list element within a list (with no
 #' recurssion).
 #'
+#' @param  name A character vector. Ideally a character vector of length 1
+#' (just one name); hoever it can accept a character vector of length greater
+#' than 1. The names in the character vector will be used as names (element
+#' headings) in the results vector.
+#' @param lst A list. Ideally a list with all elements named.
+#' @export
+#'
+#' @details
 #' All elements in the input list must have a name for this function to give
 #' accurate positions. This function can accept a character vector and return
 #' the position of each name in the vector.
@@ -11,13 +19,6 @@
 #' Will return a character vector with names for each element corresponding
 #' to the names in the character vector given to the function.If a name is not
 #' present in the list then NA is returned.
-#'
-#' @param  name A character vector. Ideally a character vector of length 1
-#' (just one name); hoever it can accept a character vector of length greater
-#' than 1. The names in the character vector will be used as names (element
-#' headings) in the results vector.
-#' @param lst A list. Ideally a list with all elements named.
-#' @export
 
 list.pos <- function(name, lst){
     matches <- sapply(name, function(x){
