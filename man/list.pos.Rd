@@ -16,11 +16,14 @@ headings) in the results vector.}
 \item{lst}{A list. Ideally a list with all elements named.}
 }
 \description{
+Finds the position of a named list element within a list (with no
+recurssion).
+}
+\details{
 All elements in the input list must have a name for this function to give
 accurate positions. This function can accept a character vector and return
 the position of each name in the vector.
-}
-\details{
+
 Will return a character vector with names for each element corresponding
 to the names in the character vector given to the function.If a name is not
 present in the list then NA is returned.
