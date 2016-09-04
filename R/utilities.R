@@ -19,6 +19,13 @@ what <- function(x, SIMPLIFY = TRUE){
        mode = mode(x),
        names = names(x))
   }
+
+  if(is.data.frame(x)){
+    x.classes <- sapply(x, class)
+    x.names <- names(x.classes)
+    names(x.classes) <- NULL
+    wht <- cbind.data.frame(df.Names = x.names, df.Classes = x.classes)
+  }
 }
 
 
