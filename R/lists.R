@@ -68,3 +68,12 @@ extract <- function(lst, num = min(lengths(lst))){
     return(extracted)
 }
 
+
+# nestapply() -------------------------------------------------------------
+#
+#' Apply a function to a nested list.
+nestapply <- function(obj, FUN, ...) {
+  lapply(obj, function(i) {
+    lapply(i, FUN, ...)
+  })
+}
