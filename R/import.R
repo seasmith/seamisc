@@ -16,6 +16,7 @@
 #' example, if you pass the parameter \code{widths} then \code{gclass} assumes
 #' you are trying to read from a fixed-width file and so uses \code{read.fwf} to
 #' read the number of lines specified by the parameter \code{n}.
+#' @export
 
 gclass <- function(x, n = 6L, ...){
   classes <- readLines(file, n = n) %>%
