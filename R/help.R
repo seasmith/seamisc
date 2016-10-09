@@ -1,16 +1,17 @@
+#' @importFrom magrittr %>%
 
 # magrittr::`%>%` ---------------------------------------------------------
-#' This is an alias of magrittr::`%>%` for convenient calling
-#' @export
+# This is an alias of magrittr::`%>%` for convenient calling
+# @export
 
-`%>%` <- magrittr::`%>%`
+# `%>%` <- magrittr::`%>%`
 
 
 # magrittr::`%<>%` --------------------------------------------------------
-#' This is an alias of magrittr::`%<>%` for convenient calling
-#' @export
+# This is an alias of magrittr::`%<>%` for convenient calling
+# @export
 
-`%<>%` <- magrittr::`%<>%`
+# `%<>%` <- magrittr::`%<>%`
 
 
 
