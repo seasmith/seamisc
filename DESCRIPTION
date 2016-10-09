@@ -5,7 +5,8 @@ Version: 0.0.0.9000
 Authors@R: person("Luke", "Smith",
     email = "luke@protocolvital.info", role = c("aut", "cre"))
 Description: Simple functions for simple tasks.
-License: GPL-2
+License: GPL-3
 LazyData: TRUE
 Imports:
     magrittr
+RoxygenNote: 5.0.1

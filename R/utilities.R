@@ -5,6 +5,7 @@
 #' @param x An object.
 #' @param SIMPLIFY Option to simplify result to a
 #' vector (deafult is \code{TRUE}). Result is a list if \code{FALSE}.
+#' @export
 
 what <- function(x, SIMPLIFY = TRUE){
   if(SIMPLIFY){
@@ -18,13 +19,20 @@ what <- function(x, SIMPLIFY = TRUE){
        mode = mode(x),
        names = names(x))
   }
+
+  if(is.data.frame(x)){
+    x.classes <- sapply(x, class)
+    x.names <- names(x.classes)
+    names(x.classes) <- NULL
+    wht <- cbind.data.frame(df.Names = x.names, df.Classes = x.classes)
+  }
 }
 
 
 # getFromFUN() ------------------------------------------------------------
 #
 #' Get all object names from a function's environment.
-#'
+#' @export
 
 getFromFUN <- function(x, value = FALSE){
   if(is.character(x)) x <- eval(as.name(x))
@@ -58,6 +66,7 @@ getFromFUN <- function(x, value = FALSE){
 #' @param rm.dubs Removes a row in which all elements are the same. If
 #' \code{TRUE} (default) then a row such as \code{c("A", "A", "A")} will be
 #' removed.
+#' @export
 
 expand.grid2 <- function(..., rm.dupes = TRUE, rm.dubs = TRUE){
   nargs <- length(args <- list(...))

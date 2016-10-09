@@ -1,16 +1,8 @@
 
 # list.pos() --------------------------------------------------------------
-#
+#'
 #' Finds the position of a named list element within a list (with no
 #' recurssion).
-#'
-#' All elements in the input list must have a name for this function to give
-#' accurate positions. This function can accept a character vector and return
-#' the position of each name in the vector.
-#'
-#' Will return a character vector with names for each element corresponding
-#' to the names in the character vector given to the function.If a name is not
-#' present in the list then NA is returned.
 #'
 #' @param  name A character vector. Ideally a character vector of length 1
 #' (just one name); hoever it can accept a character vector of length greater
@@ -18,13 +10,20 @@
 #' headings) in the results vector.
 #' @param lst A list. Ideally a list with all elements named.
 #' @export
+#'
+#' @details
+#' All elements in the input list must have a name for this function to give
+#' accurate positions. This function can accept a character vector and return
+#' the position of each name in the vector.
+#'
+#' Will return a character vector with names for each element corresponding
+#' to the names in the character vector given to the function.If a name is not
+#' present in the list then NA is returned.
 
 list.pos <- function(name, lst){
     matches <- sapply(name, function(x){
         matched <- which(names(lst) %in% x)
 
-        # logic <- names(lst) %>% sapply(function(x) !is.na(x) && nzchar(x))
-        # chars <- which(logic)
         if(length(matched) == 0) matched <- NA
         matched
     })
@@ -32,7 +31,7 @@ list.pos <- function(name, lst){
 }
 
 # extract() ---------------------------------------------------------------
-#
+#'
 #' Sequentially extract elements from vectors of equal length in a list.
 #'
 #' @param lst A list of vectors of equal length, a data frame, or a matrix.
@@ -42,13 +41,14 @@ list.pos <- function(name, lst){
 #' sequence for \code{extract()} to extract the elements of \code{lst}. Default
 #' value is the length of the shortest vector in the list.
 #' @export
-#' @example
-#' x <- list(a = 1:5, b = 6:9)
-#' # Does not extract last element in x$a; does not throw an error
-#' extract(x, length(x$b))
-#' # Throws an error because num (length(x$a)) is greater than the number of
-#' elements in x$b (greater than length(x$b)).
-#' extract(x, length(x$a))
+#' @examples
+#' # x <- list(a = 1:5, b = 6:9)
+#' ## Does not extract last element in x$a; does not throw an error
+#' # extract(x, length(x$b))
+#' ## Throws an error because num (length(x$a)) is greater than the number of
+#' ## elements in x$b (greater than length(x$b)).
+#' #extract(x, length(x$a))
+#'
 
 extract <- function(lst, num = min(lengths(lst))){
     # if(!is.list(lst)) stop("Error: object lst is not a list")
@@ -68,3 +68,12 @@ extract <- function(lst, num = min(lengths(lst))){
     return(extracted)
 }
 
+
+# nestapply() -------------------------------------------------------------
+#
+#' Apply a function to a nested list.
+nestapply <- function(obj, FUN, ...) {
+  lapply(obj, function(i) {
+    lapply(i, FUN, ...)
+  })
+}
