@@ -1,20 +1,3 @@
-#' @importFrom magrittr %>%
-
-# magrittr::`%>%` ---------------------------------------------------------
-# This is an alias of magrittr::`%>%` for convenient calling
-# @export
-
-# `%>%` <- magrittr::`%>%`
-
-
-# magrittr::`%<>%` --------------------------------------------------------
-# This is an alias of magrittr::`%<>%` for convenient calling
-# @export
-
-# `%<>%` <- magrittr::`%<>%`
-
-
-
 # showPackageContents() ---------------------------------------------------
 #'
 #' Source found in Winston Chang's "Cookbook for R" at the following link:

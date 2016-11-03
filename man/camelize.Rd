@@ -2,14 +2,15 @@
 % Please edit documentation in R/strings.R
 \name{camelize}
 \alias{camelize}
-\title{Convert snake_case to CamelCase}
+\title{Convert snake_case to CamelCase.}
 \usage{
 camelize(x, first = FALSE)
 }
 \description{
-Convert snake_case to CamelCase
+Convert snake_case to CamelCase.
 }
 \seealso{
+Taken from ~/ggplot2/utilities.r.
 Taken from ~/ggplot2/utilities.r
 }
 
