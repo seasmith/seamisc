@@ -12,6 +12,8 @@ paste00 <- function(..., sep = "", collapse = NULL){
 #
 #' Convert snake_case to CamelCase.
 #'
+#' @param x Name of function/object to be converted from snake to camel.
+#' @param first Logical.
 #' @seealso
 #' Taken from ~/ggplot2/utilities.r.
 #' Taken from ~/ggplot2/utilities.r
@@ -28,6 +30,8 @@ camelize <- function(x, first = FALSE) {
 # snakeize() --------------------------------------------------------------
 #
 #' Convert CamelCase to snake_case.
+#'
+#' @param x Name of function/object to be converted from camel to snake.
 #'
 #' @seealso
 #' Taken from ~/ggplot2/utilities.r.

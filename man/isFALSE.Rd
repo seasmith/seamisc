@@ -7,11 +7,9 @@
 isFALSE(x)
 }
 \arguments{
-\item{x}{w or logical or ‘number-like’ vectors (i.e., of types double
-(class numeric), integer and complex)), or objects for which methods have
-been written.}
+\item{x}{An object to be tested if identical to FALSE.}
 }
 \description{
-Use this when needing to test explicitly if a value is FALSE.
+This is an abbreviation of identical(FALSE, x) to go along with isTRUE()
 }
 

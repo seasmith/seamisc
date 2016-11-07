@@ -3,13 +3,15 @@
 \name{ls.objects}
 \alias{ls.objects}
 \title{List objects in the current work space (global environment) and their
-respective size in bytes.}
+respective size in bytes - taken from Dirk Eddelbuettel's response at
+http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session.}
 \usage{
-ls.objects(pos = 1, pattern, order.by, decreasing = FALSE, head = FALSE,
-  n = 5)
+ls.objects(pos = 1, pattern, order.by = "Size", decreasing = TRUE,
+  head = FALSE, n = 5)
 }
 \description{
 List objects in the current work space (global environment) and their
-respective size in bytes.
+respective size in bytes - taken from Dirk Eddelbuettel's response at
+http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session.
 }
 

@@ -6,6 +6,9 @@
 \usage{
 snakeize(x)
 }
+\arguments{
+\item{x}{Name of function/object to be converted from camel to snake.}
+}
 \description{
 Convert CamelCase to snake_case.
 }

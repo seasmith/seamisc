@@ -6,6 +6,11 @@
 \usage{
 camelize(x, first = FALSE)
 }
+\arguments{
+\item{x}{Name of function/object to be converted from snake to camel.}
+
+\item{first}{Logical.}
+}
 \description{
 Convert snake_case to CamelCase.
 }

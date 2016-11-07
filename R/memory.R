@@ -5,11 +5,12 @@
 # ls.objects() ------------------------------------------------------------
 #
 #' List objects in the current work space (global environment) and their
-#' respective size in bytes.
+#' respective size in bytes - taken from Dirk Eddelbuettel's response at
+#' http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory-in-an-r-session.
 #' @export
 
-ls.objects <- function(pos = 1, pattern, order.by,
-                        decreasing = FALSE, head = FALSE, n = 5){
+ls.objects <- function(pos = 1, pattern, order.by = "Size",
+                        decreasing = TRUE, head = FALSE, n = 5){
     napply <- function(names, fun) sapply(names, function(x){
         fun(get(x, pos = pos))
     })
@@ -32,12 +33,12 @@ ls.objects <- function(pos = 1, pattern, order.by,
 }
 
 
-# ls.os() ------------------------------------------------------------------
-#' Shorthand form of .ls.objects().
+# ls.obs() -----------------------------------------------------------------
+#' Shorthand form of ls.objects().
 #' @export
 
-lsos <- function(..., n = 10) {
-    .ls.objects(..., order.by = "Size",
+ls.obs <- function(..., n = 10) {
+    ls.objects(..., order.by = "Size",
                 decreasing = TRUE, head = TRUE, n = n)
 }
 

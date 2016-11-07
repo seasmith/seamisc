@@ -9,20 +9,18 @@
 
 what <- function(x, SIMPLIFY = TRUE){
   if(SIMPLIFY){
-    c(class = class(x),
-      type = typeof(x),
-      mode = mode(x),
-      names = names(x))
+    return(c(class = class(x),
+             type  = typeof(x),
+             names = names(x)))
   } else{
-  list(class = class(x),
-       type = typeof(x),
-       mode = mode(x),
-       names = names(x))
+    return(list(class = class(x),
+                type  = typeof(x),
+                names = names(x)))
   }
 
   if(is.data.frame(x)){
     x.classes <- sapply(x, class)
-    x.names <- names(x.classes)
+    x.names   <- names(x.classes)
     names(x.classes) <- NULL
     wht <- cbind.data.frame(df.Names = x.names, df.Classes = x.classes)
   }

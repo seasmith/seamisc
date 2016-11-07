@@ -54,7 +54,7 @@ split_apply <- function(data, x, y, FUN, SIMPLIFY = TRUE){
     }
 }
 
-facet_fun2 <- function(data, x, y, FUN){
+facet_fun <- function(data, x, y, FUN){
     data.split <- split(data, data[[y]])
     # FUN.calc <- sapply(seq_along(data.split), function(i){
     #     FUN(data.split[[i]][[x]])
