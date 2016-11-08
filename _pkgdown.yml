@@ -1,0 +1,65 @@
+reference:
+- title: Strings
+  desc: >
+    Functions to help with string manipulation.
+  contents:
+  - paste00
+  - camelize
+  - snakeize
+
+- title: Logic
+  desc: >
+    Functions to that provide shorthand logical conditions.
+  contents:
+  - isFALSE
+  - "%||%"
+
+- title: Data Frames
+  desc: >
+    Functions that help manipulate data frames.
+  contents:
+  - myVLOOKUP
+  - split_apply
+  - facet_fun
+
+- title: Piping
+  desc: >
+    Direct exports from the `magrittr` package.
+  contents:
+  - "%>%"
+  - "%<>%"
+  - "%T>%"
+
+- title: Vectors and Lists
+  desc: >
+    Functions that provide help when using vectors and lists.
+  contents:
+  - recycle.NA
+  - recycle.vector
+  - list.pos
+  - extract
+  - nestapply
+
+- title: Math
+  desc: >
+    Functions that do math.
+  contents:
+  - "%M%"
+
+- title: Memory Management
+  desc: >
+    Functions that describe what is currently available in memory.
+  contents:
+  - ls.objects
+  - ls.obs
+  - ls.mem
+
+- title: Other
+  desc: >
+    Unsorted functions.
+  contents:
+  - what
+  - getFromFUN
+  - expand.grid2
+  - showPackageContents
+  - gclass
