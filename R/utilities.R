@@ -1,3 +1,18 @@
+
+#my_build_site() ---------------------------------------------------------
+#
+#' Build a site with pkgdown::build_site() and copy a directory to the site path
+#' (useful when there are graphics in the inst/ folder).
+#'
+#' @param path The path where the site structure will be generated.
+#' @param folder The folder in the current project to include.
+#' @export
+
+my_build_site <- function(path, folder) {
+  pkgdown::build_site(path = path)
+  file.copy(from = folder, to = path, overwrite = TRUE, recursive = TRUE)
+}
+
 # what() ------------------------------------------------------------------
 #
 #' Console function for determing: class, type, mode, and names of an object.
