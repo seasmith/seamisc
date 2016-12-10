@@ -6,6 +6,11 @@
 \usage{
 getFromFUN(x, value = FALSE)
 }
+\arguments{
+\item{x}{Function to get information from.}
+
+\item{value}{Logical. Return actual value from function.}
+}
 \description{
 Get all object names from a function's environment.
 }

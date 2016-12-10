@@ -45,6 +45,9 @@ what <- function(x, SIMPLIFY = TRUE){
 # getFromFUN() ------------------------------------------------------------
 #
 #' Get all object names from a function's environment.
+#'
+#' @param x Function to get information from.
+#' @param value Logical. Return actual value from function.
 #' @export
 
 getFromFUN <- function(x, value = FALSE){
