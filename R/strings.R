@@ -1,4 +1,20 @@
 
+# add_and() ---------------------------------------------------------------
+#
+#' Add 'and' to the second-to-last position of a character vector for convenient
+#' printing when using knitr to display data in an Rmd document.
+#'
+#' @param string A character vector or a factor vector. Factors will be
+#'   converted to character.
+add_and <- function(string, and = c("and", "&")) {
+  stopifnot(is.character(string) | is.factor(string))
+  if (is.factor(string)) as.character(string)
+  len <- length(string)
+  new.string <- c(string[1:(len -1)], and[1], string[len])
+  return(new.string)
+}
+
+
 # paste() -----------------------------------------------------------------
 #
 #' Paste unqouted values and return unqouted name/symbol
