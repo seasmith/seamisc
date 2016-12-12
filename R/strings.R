@@ -6,23 +6,32 @@
 #'
 #' @param string A character vector or a factor vector. Factors will be
 #'   converted to character.
+#'
+#' @export
+
+
 add_and <- function(string, and = c("and", "&")) {
   stopifnot(is.character(string) | is.factor(string))
   if (is.factor(string)) as.character(string)
   len <- length(string)
-  new.string <- c(string[1:(len -1)], and[1], string[len])
+  new.string <- c(string[1:(len -1)], paste(and[1], string[len]))
   return(new.string)
 }
+
 
 
 # paste() -----------------------------------------------------------------
 #
 #' Paste unqouted values and return unqouted name/symbol
+
+
 paste00 <- function(..., sep = "", collapse = NULL){
     dots <- as.list(substitute(list(...)))[-1L]
     dots.pasted <- paste(dots, sep = sep, collapse = collapse)
     dots.name <- as.name(dots.pasted)
 }
+
+
 
 # camelize() --------------------------------------------------------------
 #
@@ -34,6 +43,7 @@ paste00 <- function(..., sep = "", collapse = NULL){
 #' Taken from ~/ggplot2/utilities.r.
 #' Taken from ~/ggplot2/utilities.r
 #' @export
+
 
 camelize <- function(x, first = FALSE) {
   x <- gsub("_(.)", "\\U\\1", x, perl = TRUE)
@@ -53,6 +63,7 @@ camelize <- function(x, first = FALSE) {
 #' Taken from ~/ggplot2/utilities.r.
 #' Taken from ~/ggplot2/utilities.r
 #' @export
+
 
 snakeize <- function(x) {
   x <- gsub("([A-Za-z])([A-Z])([a-z])", "\\1_\\2\\3", x)

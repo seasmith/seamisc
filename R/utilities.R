@@ -8,10 +8,13 @@
 #' @param folder The folder in the current project to include.
 #' @export
 
+
 my_build_site <- function(path, folder) {
   pkgdown::build_site(path = path)
   file.copy(from = folder, to = path, overwrite = TRUE, recursive = TRUE)
 }
+
+
 
 # what() ------------------------------------------------------------------
 #
@@ -21,6 +24,7 @@ my_build_site <- function(path, folder) {
 #' @param SIMPLIFY Option to simplify result to a
 #' vector (deafult is \code{TRUE}). Result is a list if \code{FALSE}.
 #' @export
+
 
 what <- function(x, SIMPLIFY = TRUE){
   if(SIMPLIFY){
@@ -42,6 +46,7 @@ what <- function(x, SIMPLIFY = TRUE){
 }
 
 
+
 # getFromFUN() ------------------------------------------------------------
 #
 #' Get all object names from a function's environment.
@@ -49,6 +54,7 @@ what <- function(x, SIMPLIFY = TRUE){
 #' @param x Function to get information from.
 #' @param value Logical. Return actual value from function.
 #' @export
+
 
 getFromFUN <- function(x, value = FALSE){
   if(is.character(x)) x <- eval(as.name(x))
@@ -64,6 +70,8 @@ getFromFUN <- function(x, value = FALSE){
 
   return(ls.obj)
 }
+
+
 
 # expand.grid2() ----------------------------------------------------------
 #
@@ -83,6 +91,7 @@ getFromFUN <- function(x, value = FALSE){
 #' \code{TRUE} (default) then a row such as \code{c("A", "A", "A")} will be
 #' removed.
 #' @export
+
 
 expand.grid2 <- function(..., rm.dupes = TRUE, rm.dubs = TRUE){
   nargs <- length(args <- list(...))
@@ -129,5 +138,3 @@ expand.grid2 <- function(..., rm.dupes = TRUE, rm.dubs = TRUE){
 
   return(grid)
 }
-
-

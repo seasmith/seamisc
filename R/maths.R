@@ -11,6 +11,8 @@
 #' @param lhs A number (integer or numeric).
 #' @param rhs A number (integer or numeric).
 #' @export
+#'
+#'
 `%M%` <- function(lhs, rhs){
     if(lhs < rhs){
         old.lhs <- lhs
@@ -21,6 +23,3 @@
     y <- lhs %% rhs
     return(c(quotient = x, remainder = y))
 }
-
-
-

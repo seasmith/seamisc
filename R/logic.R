@@ -6,6 +6,7 @@
 #' @param x An object to be tested if identical to FALSE.
 #' @export
 
+
 isFALSE <- function(x) identical(FALSE, x)
 
 
@@ -17,6 +18,7 @@ isFALSE <- function(x) identical(FALSE, x)
 #' @param lhs An object of any length.
 #' @param rhs A replacement value if  \code{length(lhs) == FALSE}.
 #' @export
+
 
 "%||%" <- function(lhs, rhs){
   if(length(lhs)) lhs else rhs

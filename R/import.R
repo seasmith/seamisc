@@ -18,6 +18,7 @@
 #' read the number of lines specified by the parameter \code{n}.
 #' @export
 
+
 gclass <- function(x, n = 6L, ...){
   classes <- readLines(file, n = n) %>%
     textConnection() %>%

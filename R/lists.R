@@ -20,6 +20,7 @@
 #' to the names in the character vector given to the function.If a name is not
 #' present in the list then NA is returned.
 
+
 list.pos <- function(name, lst){
     matches <- sapply(name, function(x){
         matched <- which(names(lst) %in% x)
@@ -29,6 +30,8 @@ list.pos <- function(name, lst){
     })
     return(matches)
 }
+
+
 
 # extract() ---------------------------------------------------------------
 #'
@@ -50,6 +53,7 @@ list.pos <- function(name, lst){
 #' #extract(x, length(x$a))
 #'
 
+
 extract <- function(lst, num = min(lengths(lst))){
     # if(!is.list(lst)) stop("Error: object lst is not a list")
     # extracted <- list()
@@ -69,9 +73,12 @@ extract <- function(lst, num = min(lengths(lst))){
 }
 
 
+
 # nestapply() -------------------------------------------------------------
 #
 #' Apply a function to a nested list.
+
+
 nestapply <- function(obj, FUN, ...) {
   lapply(obj, function(i) {
     lapply(i, FUN, ...)
