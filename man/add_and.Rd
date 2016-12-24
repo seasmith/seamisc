@@ -5,11 +5,21 @@
 \title{Add 'and' to the second-to-last position of a character vector for convenient
 printing when using knitr to display data in an Rmd document.}
 \usage{
-add_and(string, and = c("and", "&"))
+add_and(string, oxford = TRUE, and = c("and", "&", "\\\\b"), sep = c(",",
+  ";"))
 }
 \arguments{
 \item{string}{A character vector or a factor vector. Factors will be
 converted to character.}
+
+\item{oxford}{Logical. Should the output string use the Oxford comma or not.}
+
+\item{and}{Character vector indicating which style of "and" to use at the end
+of the output string. '\\b' indicates that there is to be no "and", which
+instead inserts a literal backspace.}
+
+\item{sep}{Character vector indicating the separator to use. Could be the
+usual comma (","), semi-colon (";"), or something else.}
 }
 \description{
 Add 'and' to the second-to-last position of a character vector for convenient

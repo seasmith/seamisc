@@ -64,3 +64,22 @@ ls.mem <- function(pos = 1, all.names = TRUE, unit = "MB"){
 
     obj.mem.sum/unit.div[which(unit.name == arg)]
 }
+
+
+# ls.summary() ------------------------------------------------------------
+#' Summary statistics of objects in workspace by Type.
+#'
+#' @param order.by Character vector of length one (1) indicating the column to
+#'   order by.
+#' @export
+
+ls.summary <- function(order.by = "Size_All") {
+  ls.objects() %>%
+  dplyr::group_by(Type) %>%
+  dplyr::summarize(Count    = n(),
+                   Size_All = sum(Size),
+                   Size_Avg = mean(Size),
+                   Rows     = sum(Rows),
+                   Columns  = sum(Columns)) %>%
+  dplyr::arrange(desc(.[[order.by]]))
+}
