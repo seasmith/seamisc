@@ -1,7 +1,7 @@
 Package: seasmith
 Type: Package
 Title: Luke's utility package
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: person("Luke", "Smith",
     email = "luke@protocolvital.info", role = c("aut", "cre"))
 Description: Simple functions for simple tasks.

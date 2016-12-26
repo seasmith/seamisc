@@ -4,7 +4,8 @@
 \alias{ls.summary}
 \title{Summary statistics of objects in workspace by Type.}
 \usage{
-ls.summary(order.by = "Size_All")
+ls.summary(size.all = "KB", plot = TRUE, order.x = TRUE,
+  order.by = "Size_All")
 }
 \arguments{
 \item{order.by}{Character vector of length one (1) indicating the column to

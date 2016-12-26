@@ -73,13 +73,57 @@ ls.mem <- function(pos = 1, all.names = TRUE, unit = "MB"){
 #'   order by.
 #' @export
 
-ls.summary <- function(order.by = "Size_All") {
-  ls.objects() %>%
+ls.summary <- function(size.all = "KB", plot = TRUE, order.x = TRUE, order.by = "Size_All") {
+  summ <- ls.objects() %>%
   dplyr::group_by(Type) %>%
   dplyr::summarize(Count    = n(),
                    Size_All = sum(Size),
                    Size_Avg = mean(Size),
                    Rows     = sum(Rows),
-                   Columns  = sum(Columns)) %>%
-  dplyr::arrange(desc(.[[order.by]]))
+                   Columns  = sum(Columns))
+
+  resize <- dplyr::case_when(
+    size.all == "B"  ~ 10^0,
+    size.all == "KB" ~ 10^3,
+    size.all == "MB" ~ 10^6,
+    size.all == "GB" ~ 10^9,
+    size.all == "TB" ~ 10^12
+  )
+
+  df.ls <- summ %>%
+    dplyr::arrange(desc(Size_All)) %>%
+    dplyr::mutate(Size_All = Size_All / resize,
+                  Size_Avg = Size_Avg / resize) %>%
+    dplyr::select(-Rows, -Columns) %>%
+    tidyr::gather(-Type, key = "key", value = "value")
+
+  summ <- summ %>%
+    dplyr::arrange(desc(.[[order.by]])) %>%
+    dplyr::mutate(Size_All = Size_All / resize,
+                  Size_Avg = Size_Avg / resize)
+
+  if (plot) {
+
+    if (order.x) {
+      factor.order <- df.ls %>%
+        dplyr::filter(key == "Size_All") %>%
+        dplyr::select(Type) %>%
+        unlist() %>%
+        as.character()
+
+      df.ls$Type <- factor(df.ls$Type, levels = factor.order)
+    }
+
+    p <- df.ls %>%
+      ggplot2::ggplot(ggplot2::aes(Type, value, fill = Type)) +
+      ggplot2::geom_bar(stat = "identity") +
+      ggplot2::facet_wrap(~key, scales = "free") +
+      ggplot2::coord_flip() +
+      ggplot2::theme(axis.text.x = ggplot2::element_text(angle = 30))
+
+  } else {
+    return(summ)
+  }
+  print(p)
+  return(summ)
 }
