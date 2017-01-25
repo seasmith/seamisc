@@ -1,7 +1,7 @@
 Package: seasmith
 Type: Package
 Title: Luke's utility package
-Version: 0.3.1
+Version: 0.3.2
 Authors@R: person("Luke", "Smith",
     email = "luke@protocolvital.info", role = c("aut", "cre"))
 Description: Simple functions for simple tasks.
@@ -12,11 +12,15 @@ Imports:
     magrittr,
     assertthat,
     lazyeval,
-    pkgdown
+    pkgdown,
+    ggplot2,
+    tidyr,
+    lubridate
 RoxygenNote: 5.0.1
 Collate:
     'utils.dataFrames.R'
     'dataFrames.R'
+    'datesAndTimes.R'
     'help.R'
     'helpImports.R'
     'import.R'
