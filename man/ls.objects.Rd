@@ -9,6 +9,21 @@ http://stackoverflow.com/questions/1358003/tricks-to-manage-the-available-memory
 ls.objects(pos = 1, pattern, order.by = "Size", decreasing = TRUE,
   head = FALSE, n = 5)
 }
+\arguments{
+\item{pos}{Position in environment to search.}
+
+\item{pattern}{Search pattern for the environment (passed to \code{ls()}).}
+
+\item{order.by}{Column to order results by.}
+
+\item{decreasing}{Logical indicating whether to sort results in decreasing
+order.}
+
+\item{head}{Logical indicating whether the results should be truncated by
+\code{head()}.}
+
+\item{n}{Number to truncate results if \code{head = TRUE}.}
+}
 \description{
 List objects in the current work space (global environment) and their
 respective size in bytes - taken from Dirk Eddelbuettel's response at

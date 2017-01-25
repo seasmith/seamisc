@@ -22,7 +22,5 @@ Apply a function to a faceted piece of data.
 }
 \examples{
 
-# Gives the mean \\code{wt} when \\code{mtcars} has been faceted by \\code{cyl}.
-facet_fun(mtcars, "wt", "cyl", mean)
 }
 

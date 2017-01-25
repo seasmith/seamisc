@@ -48,6 +48,13 @@ add_and <- function(string, oxford = TRUE, and = c("and", "&", "\\b"), sep = c("
 # paste() -----------------------------------------------------------------
 #
 #' Paste unqouted values and return unqouted name/symbol
+#'
+#' @param ... Character vectors to pass to \code{paste()}.
+#' @param sep Separator to use.
+#' @param collapse Character to use when \code{paste()} collapses on multiple
+#'   vectors.
+#'
+#' @export
 
 
 paste00 <- function(..., sep = "", collapse = NULL){

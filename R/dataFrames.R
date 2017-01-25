@@ -1,7 +1,9 @@
 #' @include utils.dataFrames.R
+NULL
 
 # getColNums() ------------------------------------------------------------ '
-#' @title Returns columns numbers using dplyr-like selection syntax (i.e. col1:col5).
+#'
+#' Returns columns numbers using dplyr-like selection syntax (i.e. col1:col5).
 #'
 #' @param .data Object that has named indexes. Only data frames are supported at
 #'   this time.
@@ -78,8 +80,6 @@ myVLOOKUP <- function(df, lookupValue, lookupColumn, returnColumn) {
 #'
 #' @examples
 #'
-#' # Gives the mean \code{wt} when \code{mtcars} has been faceted by \code{cyl}.
-#' facet_fun(mtcars, "wt", "cyl", mean)
 #' @export
 
 
@@ -97,14 +97,14 @@ split_apply <- function(data, x, y, FUN, SIMPLIFY = TRUE){
   }
 }
 
-#' @export
-facet_fun <- function(data, x, y, FUN){
-  data.split <- split(data, data[[y]])
-  # FUN.calc <- sapply(seq_along(data.split), function(i){
-  #     FUN(data.split[[i]][[x]])
-  # })
-  FUN.calc <- rapply(data.split, FUN)
-
-  # names(FUN.calc) <- names(data.split)
-  return(FUN.calc)
-}
+# #' @export
+# facet_fun <- function(data, x, y, FUN){
+#   data.split <- split(data, data[[y]])
+#   # FUN.calc <- sapply(seq_along(data.split), function(i){
+#   #     FUN(data.split[[i]][[x]])
+#   # })
+#   FUN.calc <- rapply(data.split, FUN)
+#
+#   # names(FUN.calc) <- names(data.split)
+#   return(FUN.calc)
+# }

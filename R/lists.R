@@ -77,6 +77,13 @@ extract <- function(lst, num = min(lengths(lst))){
 # nestapply() -------------------------------------------------------------
 #
 #' Apply a function to a nested list.
+#'
+#' @param obj Nested object to act upon.
+#' @param FUN Function to apply to the nested object.
+#' @param ... Other arguments to pass (if variable is greater than length one
+#'   then the first value will be recylced).
+#'
+#' @export
 
 
 nestapply <- function(obj, FUN, ...) {

@@ -6,6 +6,14 @@
 \usage{
 paste00(..., sep = "", collapse = NULL)
 }
+\arguments{
+\item{...}{Character vectors to pass to \code{paste()}.}
+
+\item{sep}{Separator to use.}
+
+\item{collapse}{Character to use when \code{paste()} collapses on multiple
+vectors.}
+}
 \description{
 Paste unqouted values and return unqouted name/symbol
 }

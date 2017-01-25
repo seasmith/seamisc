@@ -6,6 +6,15 @@
 \usage{
 ls.mem(pos = 1, all.names = TRUE, unit = "MB")
 }
+\arguments{
+\item{pos}{Integer indicating position within the environment hierarchy to
+search within. 1 = Global.}
+
+\item{all.names}{= Logical indicating whether to include names that begin with
+".".}
+
+\item{unit}{Character indicating the units to return for size of objects.}
+}
 \description{
 Find the total memory of all objects
 }

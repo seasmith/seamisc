@@ -4,10 +4,14 @@
 \alias{ls.summary}
 \title{Summary statistics of objects in workspace by Type.}
 \usage{
-ls.summary(size.all = "KB", plot = TRUE, order.x = TRUE,
-  order.by = "Size_All")
+ls.summary(size.all = "KB", plot = TRUE, order.by = "Size_All")
 }
 \arguments{
+\item{size.all}{Character vector specifying the unit to display
+\code{Size_All}. Can be either of \code{"B", "KB", "MB", "GB"}.}
+
+\item{plot}{Logical indicating whether to output a summary plot.}
+
 \item{order.by}{Character vector of length one (1) indicating the column to
 order by.}
 }

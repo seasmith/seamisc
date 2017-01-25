@@ -6,6 +6,11 @@
 \usage{
 ls.obs(..., n = 10)
 }
+\arguments{
+\item{...}{Additional argument to pass to \code{ls.objects()}.}
+
+\item{n}{Number to pass to \code{head()}.}
+}
 \description{
 Shorthand form of ls.objects().
 }

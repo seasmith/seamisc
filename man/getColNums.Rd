@@ -12,4 +12,7 @@ this time.}
 
 \item{...}{Unquoted index names (i.e. column names).}
 }
+\description{
+Returns columns numbers using dplyr-like selection syntax (i.e. col1:col5).
+}
 

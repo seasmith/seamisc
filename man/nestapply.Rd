@@ -6,6 +6,14 @@
 \usage{
 nestapply(obj, FUN, ...)
 }
+\arguments{
+\item{obj}{Nested object to act upon.}
+
+\item{FUN}{Function to apply to the nested object.}
+
+\item{...}{Other arguments to pass (if variable is greater than length one
+then the first value will be recylced).}
+}
 \description{
 Apply a function to a nested list.
 }

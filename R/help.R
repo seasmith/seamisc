@@ -2,6 +2,9 @@
 #'
 #' Source found in Winston Chang's "Cookbook for R" at the following link:
 #' http://www.cookbook-r.com/Scripts_and_functions/Getting_a_list_of_functions_and_objects_in_a_package/
+#'
+#' @param packageName Character name of the package to get contents from.
+#'
 #' @export
 
 
