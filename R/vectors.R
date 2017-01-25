@@ -1,3 +1,35 @@
+
+# normalize() -------------------------------------------------------------
+#
+#' Normalize a numeric vector: 0 (old min) to 1 (old max)
+#' 
+#' @param x A numeric vector to be normalized.
+#' @export
+#' @seealso https://github.com/seasmith/MyNotes/blob/master/R/Cheatsheet.MD#vector
+
+normalize <- function(x) {
+  vapply(X = x,
+         FUN = function(y) (y - min(x)) / (max(x) - min(x)),
+         FUN.VALUE = numeric(1))
+}
+
+
+# seq_find() --------------------------------------------------------------
+#
+#' Find consecutive sequences.
+#' 
+#' @param x A sequence of numbers.
+#' @export
+
+seq_find <- function(x) {
+  split(x, cumsum(c(1, diff(x) != 1)))
+}
+
+
+
+
+
+
 # recycle.NA() ------------------------------------------------------------
 #
 #' A vector recycler that recycles with \code{NA}'s.
