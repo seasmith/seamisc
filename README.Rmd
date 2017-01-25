@@ -1,0 +1,20 @@
+---
+title: "The seasmith package"
+author: Luke Smith
+output: github_document
+---
+
+# Luke's Utility Package
+
+Welcome to my utility package. This is a collection of "random" functions I have created, from the very simple `isFALSE()` to the a-little-bit-more-complexed `expand.grid2()`.
+
+I use these functions all the time. In fact, I round up some of these functions into a single file (`utilities.R`) in my other packages.
+
+My current favorite:
+
+```{r fave, fig.show='hold'}
+library(seasmith)
+
+# - Prints plot and returns summary data frame of objects in user workspace.
+ls.summary()
+```

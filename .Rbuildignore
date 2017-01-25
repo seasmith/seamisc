@@ -4,3 +4,4 @@ obsolete/
 scratch/
 ^README\.MD$
 ^_pkgdown\.yml$
+^README\.Rmd$
