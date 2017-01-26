@@ -2,9 +2,15 @@
 % Please edit documentation in R/datesAndTimes.R
 \name{seq_fill}
 \alias{seq_fill}
+\alias{seq_fill_date}
+\alias{seq_fill_date_df}
 \title{Fill in missing sequences}
 \usage{
 seq_fill(x, seq.type = "month", return.list = TRUE)
+
+seq_fill_date(x)
+
+seq_fill_date_df(df, col)
 }
 \arguments{
 \item{x}{A sequence of numbers.}
@@ -14,6 +20,11 @@ seq_fill(x, seq.type = "month", return.list = TRUE)
 
 \item{return.list}{Logical. Return a list (default) or a single numeric
 vector.}
+
+\item{df}{A dataframe containing a column of type mm/yyyy, in some format}
+
+\item{col}{The quoted name of the column in \code{df} containing the mm/yyyy
+column}
 }
 \description{
 Fill in missing sequences

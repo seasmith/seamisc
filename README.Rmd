@@ -6,15 +6,35 @@ output: github_document
 
 # Luke's Utility Package
 
-Welcome to my utility package. This is a collection of "random" functions I have created, from the very simple `isFALSE()` to the a-little-bit-more-complexed `expand.grid2()`.
+Welcome to my utility package. This is a collection of "random" functions I have created
 
-I use these functions all the time. In fact, I round up some of these functions into a single file (`utilities.R`) in my other packages.
+I use these functions at the command-line or store them in a single file (`utilities.R`) within other packages.
 
 My current favorite:
 
-```{r fave, fig.show='hold'}
+```{r fave1, fig.show='hold'}
 library(seasmith)
 
-# - Prints plot and returns summary data frame of objects in user workspace.
+# - Show the user workspace as a plot and data frame with seasmith::ls.summary().
 ls.summary()
+```
+
+```{r silent, include=FALSE}
+library(tidyverse)
+load("~/R/Resume/Dread.RData")
+
+dread <- dread %>%
+  mutate(mon_year = factor(mon_year(Date), levels = unique(mon_year(Date)))) %>%
+  count(mon_year)
+```
+
+```{r fave2}
+library(tidyverse)
+
+# Fill-in these implicit missing month-year values...
+dread
+
+# ...by using seasmith::seq_fill_date_df()
+dread %>%
+  seasmith::seq_fill_date_df("mon_year")
 ```

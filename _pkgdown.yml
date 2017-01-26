@@ -1,19 +1,4 @@
 reference:
-- title: Strings
-  desc: >
-    Functions to help with string manipulation.
-  contents:
-  - paste00
-  - camelize
-  - snakeize
-
-- title: Logic
-  desc: >
-    Functions to that provide shorthand logical conditions.
-  contents:
-  - isFALSE
-  - "%||%"
-
 - title: Data Frames
   desc: >
     Functions that help manipulate data frames.
@@ -23,23 +8,19 @@ reference:
   - split_apply
   - facet_fun
 
-- title: Piping
+- title: Dates and Times
   desc: >
-    Direct exports from the `magrittr` package.
+    Functions that deal with dates and times
   contents:
-  - "%>%"
-  - "%<>%"
-  - "%T>%"
+  - seq_fill_date
+  - seq_fill_date_df
 
-- title: Vectors and Lists
+- title: Logic
   desc: >
-    Functions that provide help when using vectors and lists.
+    Functions to that provide shorthand logical conditions.
   contents:
-  - recycle.NA
-  - recycle.vector
-  - list.pos
-  - extract
-  - nestapply
+  - isFALSE
+  - "%||%"
 
 - title: Math
   desc: >
@@ -54,6 +35,7 @@ reference:
   - ls.objects
   - ls.obs
   - ls.mem
+  - ls.summary
 
 - title: Other
   desc: >
@@ -64,3 +46,31 @@ reference:
   - expand.grid2
   - showPackageContents
   - gclass
+
+- title: Piping
+  desc: >
+    Direct exports from the `magrittr` package.
+  contents:
+  - "%>%"
+  - "%<>%"
+  - "%T>%"
+
+- title: Strings
+  desc: >
+    Functions to help with string manipulation.
+  contents:
+  - paste00
+  - camelize
+  - snakeize
+
+- title: Vectors and Lists
+  desc: >
+    Functions that provide help when using vectors and lists.
+  contents:
+  - list.pos
+  - nestapply
+  - extract
+  - recycle.NA
+  - recycle.vector
+  - seq_fill
+
