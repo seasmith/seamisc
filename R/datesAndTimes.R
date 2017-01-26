@@ -66,3 +66,27 @@ seq_fill <- function(x, seq.type = "month", return.list = TRUE) {
   }
   return(out)
 }
+
+#' @rdname seq_fill
+#' @export
+
+seq_fill_date <- function(x) {
+  
+  # Split x by "/" or "-" regex
+  regex <- x %>% stringi::stri_extract(regex = "[^0-9]") %>% unique()
+  x     <- x %>% stringi::stri_split(regex = regex)
+  
+  # Extract month and year
+  month <- x %>% sapply(`[`, 1) %>% as.numeric()
+  year <- x %>% sapply(`[`, 2) %>% as.numeric()
+  
+  # Fill in missing month and year sequences
+  month <- month %>% seq_fill() %>% unlist()
+  index  <- month %>% {cumsum(c(1, diff(.) != 1))}
+  year <- year[index]
+  
+  # Return x into its original format using regex
+  x <- paste0(month, regex, year)
+  return(x)
+}
+
