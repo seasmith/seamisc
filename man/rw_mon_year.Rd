@@ -2,9 +2,12 @@
 % Please edit documentation in R/datesAndTimes.R
 \name{mon_year}
 \alias{mon_year}
-\title{Convert dates string elements to month and year (mm/yyyy).}
+\alias{rw_mon_year}
+\title{Rewrite dates to month/year (mm/yyyy).}
 \usage{
 mon_year(date, sep = "/")
+
+rw_mon_year(date, sep = "/")
 }
 \arguments{
 \item{date}{Date vector.}
@@ -12,6 +15,6 @@ mon_year(date, sep = "/")
 \item{sep}{Month-year separator. Default is \code{"/"}.}
 }
 \description{
-Convert dates string elements to month and year (mm/yyyy).
+Rewrite dates to month/year (mm/yyyy).
 }
 

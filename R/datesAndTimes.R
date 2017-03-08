@@ -1,15 +1,44 @@
 # mon_year() --------------------------------------------------------------
 #
-#' Convert dates string elements to month and year (mm/yyyy).
+#' Rewrite dates to month/year (mm/yyyy).
 #'
 #' @param date Date vector.
 #' @param sep Month-year separator. Default is \code{"/"}.
 #' @export
-
+#' @rdname rw_mon_year
 mon_year <- function(date, sep = "/") {
   paste0(lubridate::month(date), sep, lubridate::year(date))
 }
 
+#' @export
+#' @rdname rw_mon_year
+rw_mon_year <- function(date, sep = "/") {
+  paste0(lubridate::month(date), sep, lubridate::year(date))
+}
+
+
+
+# rw_mday() ---------------------------------------------------------------
+#'
+#' Rewrite a date to some other day in the month.
+#'
+#' @export
+
+rw_mday <- function(date, day = 1) {
+  n_year  <- lubridate::year(date) %>% as.list()
+  n_month <- lubridate::month(date) %>% as.list()
+  n_day   <- rep(day, times = length(date)) %>% as.list()
+
+  func   <- function(x) paste0(x, collapse = "/")
+  format <- "%Y/%m/%d"
+
+  n_date <- Map(c, n_year, n_month, n_day) %>%
+    lapply(func) %>%
+    unlist() %>%
+    as.Date(format = format)
+
+  return(n_date)
+}
 
 
 
